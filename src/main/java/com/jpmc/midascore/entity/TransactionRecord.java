@@ -27,10 +27,13 @@ public class TransactionRecord {
     @JoinColumn(name = "recipient_id", nullable = false)
     private UserRecord recipient;
 
-    public TransactionRecord(double amount, UserRecord sender, UserRecord recipient) {
+    private float incentive;
+
+    public TransactionRecord(double amount, UserRecord sender, UserRecord recipient, float incentive) {
         this.amount = amount;
         this.sender = sender;
         this.recipient = recipient;
+        this.incentive = incentive;
         this.timestamp = LocalDateTime.now();
     }
 }
